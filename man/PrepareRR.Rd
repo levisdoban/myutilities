@@ -12,15 +12,15 @@ Works with EnsurePackages() to load the list of libraries provided.
 \usage{
 PrepareRR(x)
 }
+
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{ = is a list of libraries to be loaded
-%%     ~~Describe \code{x} here~~
-}
-}
+  \item{x}{ = is a list of libraries to be loaded}
+  }
 
 \examples{
 
 x = c("data.table", "mass")
 
 PrepareRR (x)
+}

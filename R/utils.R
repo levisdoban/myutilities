@@ -229,7 +229,7 @@ splitter = function(string,ind){
 
 to_numerics = function(list_cols, data){
  # ==============================================================================
-  #   converts numeric data imported as factors using data.tables fread back into 
+  #   converts numeric data imported as factors using data.tables fread back into
   #   numeric data
   #
   # Args:
@@ -240,7 +240,8 @@ to_numerics = function(list_cols, data){
   #   data.table: date table with converted data
   # ===============================================================================
 
-  data2 = cbind(data[, excl, with=FALSE], data[, lapply(.SD[, -excl, with=FALSE], as.numeric)])  
-  return(data2) 
+  data2 = cbind(data[, excl, with=FALSE], data[, lapply(.SD[, -excl, with=FALSE], as.numeric)])
+  return(data2)
 }
 
+combinatorics = function(){}

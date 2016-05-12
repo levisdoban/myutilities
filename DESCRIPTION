@@ -7,4 +7,4 @@ Maintainer: @levisdoba <levisdoban@gmail.com>
 Description: This is a package of the common functions I use frequently to help me cut some work.
 License: Apache License, Version 2.0
 LazyData: TRUE
-Depends: data.table,ggplot2
+Depends: data.table,ggplot2, RMySQL
