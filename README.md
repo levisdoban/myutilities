@@ -11,3 +11,5 @@ To install run:
 library(devtools)
 
 install_github("levisdoban/myutilities")
+
+library(myutilities)
