@@ -245,3 +245,8 @@ to_numerics = function(list_cols, data){
 }
 
 combinatorics = function(){}
+
+combi = function(cases, by){
+  s = prod(rep(cases,by))
+  return(s)
+}
