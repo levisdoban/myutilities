@@ -244,10 +244,25 @@ to_numerics = function(list_cols, data){
   return(data2)
 }
 
-#another
-combinatorics = function(){}
 
 combi = function(cases, by){
   s = prod(rep(cases,by))
   return(s)
 }
+
+similar = function(df){
+  test = FALSE
+  nms = as.character(df)
+  nm = list(nms[grep("_", nms)])
+  
+    if(length(nm) > 0){
+      pars = c(nm, "_")
+      all_nams = do.call(strsplit, pars)
+      all_nams = unlist(lapply(all_nams, `[[`, 1))
+      ss = sapply(all_nams, grep, nms) 
+      test = any(sapply(ss, length) > 1)
+      }
+ 
+return(test) 
+}
+
