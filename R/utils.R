@@ -1,16 +1,3 @@
-'
-Script      : utility
-Created     : May, 2016
-Author(s)   : Elvis Bando
-Version     : v1.0
-License     : Apache License, Version 2.0
-Description : Utility functions and database setup
-'
-
-#===============================================#
-#  These are functions that load up the data    #
-# and prepare the data for api access           #
-#===============================================#
 
 #disable scientific notation
 options(scipen=999)
@@ -254,15 +241,25 @@ similar = function(df){
   test = FALSE
   nms = as.character(df)
   nm = list(nms[grep("_", nms)])
-  
-    if(length(nm) > 0){
-      pars = c(nm, "_")
-      all_nams = do.call(strsplit, pars)
-      all_nams = unlist(lapply(all_nams, `[[`, 1))
-      ss = sapply(all_nams, grep, nms) 
-      test = any(sapply(ss, length) > 1)
-      }
- 
-return(test) 
+  oky = setdiff(nms, nms[grep("_", nms)])
+
+  if(length(nms[grep("_", nms)]) > 0){
+    pars = c(nm, "_")
+    all_nams = do.call(strsplit, pars)
+    ssd = unlist(lapply(all_nams, `[[`, 1))
+    if(any(duplicated(ssd))){
+
+      test = TRUE
+    } else {
+      all_nams = as.list(unique(ssd))
+      ss = unlist(lapply(all_nams,grep,oky))
+      test = ifelse(length(ss) > 0, TRUE, FALSE)
+
+    }
+
+  }
+
+  return(test)
 }
+
 
